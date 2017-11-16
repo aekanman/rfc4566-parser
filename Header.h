@@ -34,7 +34,48 @@ struct media {
     char *media;
     int port;
     char *proto;
-    int *fmt;
+    int fmt;
+};
+
+struct att_source_filter {
+    char *unknown_str;
+    char *nettype;
+    char *addrtype;
+    char *address;
+    char *unicast_addr;
+};
+
+struct att_rtp_map {
+    int payload_type;
+    char *encoding_name;
+    int clc_rate;
+};
+
+struct att_fmtp {
+    int format;
+    char *sampling;
+    int width;
+    int height;
+    int depth;
+    char *colorimetry;
+    int interlace;
+};
+
+struct att_mediaclk {
+    long direct;
+    int rate;
+};
+
+struct att_tsrefclk {
+    char *ptp;
+};
+
+struct attributes{
+    struct att_source_filter sf;
+    struct att_rtp_map rtp;
+    struct att_fmtp fmtp;
+    struct att_mediaclk mclk;
+    struct att_tsrefclk rclk;
 };
 
 struct payload {
@@ -44,7 +85,7 @@ struct payload {
     struct timing time;
     struct media media;
     struct connection conn;
-};
-
+    struct attributes att;
+}payload;
 
 #endif /* Header_h */
