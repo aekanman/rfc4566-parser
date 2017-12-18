@@ -36,3 +36,6 @@ Output:
 ```
 
 <img src="/Screen Shot.png" alt="Original" height="640" />
+
+## License
+MIT © [Atakan Efe Kanman](https://atakanefekanman.com)
